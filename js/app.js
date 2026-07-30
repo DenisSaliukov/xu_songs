@@ -533,6 +533,42 @@
             }
         });
     });
+    window.rewindSong = function(audioId, btn) {
+        var audio = document.getElementById(audioId);
+        if (audio) {
+            audio.currentTime = 0;
+            var container = btn.closest(".audio-container") || btn.parentElement.parentElement;
+            var progress = container ? container.querySelector(".audio-progress-bar") : null;
+            if (progress) progress.value = 0;
+        }
+    };
+    window.playSong = function(audioId, btn) {
+        var audio = document.getElementById(audioId);
+        var container = btn.closest(".audio-container") || btn.parentElement.parentElement;
+        var progress = container ? container.querySelector(".audio-progress-bar") : null;
+        if (!audio) {
+            console.error("Аудиофайл с id " + audioId + " не найден в HTML!");
+            return;
+        }
+        if (audio.paused) {
+            document.querySelectorAll("audio").forEach(el => {
+                el.pause();
+                document.querySelectorAll(".btn-play").forEach(b => b.innerHTML = "▶ Слушать");
+            });
+            audio.play();
+            btn.innerHTML = "⏸ Пауза";
+            audio.ontimeupdate = function() {
+                if (audio.duration && progress) progress.value = audio.currentTime / audio.duration * 100;
+            };
+            audio.onended = function() {
+                btn.innerHTML = "▶ Слушать";
+                if (progress) progress.value = 0;
+            };
+        } else {
+            audio.pause();
+            btn.innerHTML = "▶ Слушать";
+        }
+    };
     window["FLS"] = true;
     spollers();
 })();
