@@ -520,6 +520,24 @@ footer {
   white-space: pre-line;
   text-align: left
 }
+.audio-progress-bar {
+  display: block;
+  width: 100%;
+  height: 6px;
+  margin: 12px 0;
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  background-color: #e9ecef;
+  border-radius: 3px;
+  overflow: hidden
+}
+.audio-progress-bar::-webkit-progress-value {
+  background-color: #1e3a8a
+}
+.audio-progress-bar::-moz-progress-bar {
+  background-color: #1e3a8a
+}
 @media (min-width:75em) {
   .popup__content {
     padding-left: 1.25rem

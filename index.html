@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20260731040154">
+	<link rel="stylesheet" href="css/style.min.css?_v=20260731045027">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -87,6 +87,8 @@
 
 									<!-- Кнопка управления музыкой -->
 									<button onclick="togglePlay(this)" class="custom-player-btn">▶ Слушать</button>
+
+									<progress class="audio-progress-bar" value="0" max="100"></progress>
 
 									<!-- Блок с кнопками для текста и скачивания трека -->
 									<div class="audio-buttons-grid">
@@ -415,7 +417,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20260731040154"></script>
+	<script src="js/app.min.js?_v=20260731045027"></script>
 	<script>
 		function togglePlay(btn) {
 			// Находим аудиофайл, который находится в том же блоке, что и кнопка
@@ -435,6 +437,7 @@
 			}
 		}
 	</script>
+
 </body>
 
 </html>

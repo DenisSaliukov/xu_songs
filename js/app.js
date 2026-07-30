@@ -513,6 +513,26 @@
             });
         }
     }, 0);
+    document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll(".audio-container").forEach(container => {
+            const audio = container.querySelector("audio");
+            const progress = container.querySelector(".audio-progress-bar");
+            if (audio && progress) {
+                audio.addEventListener("timeupdate", () => {
+                    if (audio.duration) progress.value = audio.currentTime / audio.duration * 100;
+                });
+                progress.addEventListener("click", e => {
+                    if (audio.duration) {
+                        const rect = progress.getBoundingClientRect();
+                        const clickX = e.clientX - rect.left;
+                        const width = rect.width;
+                        const percentage = clickX / width;
+                        audio.currentTime = percentage * audio.duration;
+                    }
+                });
+            }
+        });
+    });
     window["FLS"] = true;
     spollers();
 })();
