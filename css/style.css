@@ -388,6 +388,11 @@ h1 {
   backdrop-filter: blur(2px);
   text-align: justify
 }
+.text-block {
+  display: flex;
+  flex-direction: column;
+  gap: .625rem
+}
 .text-block a {
   color: #637ebd
 }
