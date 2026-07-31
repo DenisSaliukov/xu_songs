@@ -493,12 +493,14 @@ footer {
   transition: background-color .2s
 }
 .btn-download-song {
-  background-color: #070664
+  letter-spacing: .03125em;
+  background-color: #27265c
 }
 .btn-download-song:hover {
   background-color: #18117a
 }
 .btn-download-text {
+  letter-spacing: .03125em;
   background-color: #0f4370
 }
 .btn-download-text:hover {
@@ -507,15 +509,17 @@ footer {
 .lyrics-summary {
   cursor: pointer;
   padding: 8px;
-  background-color: #191149;
+  background-color: #111c4d;
   border-radius: 6px;
   text-align: center;
   font-weight: 700;
   font-size: 13px;
-  list-style: none
+  list-style: none;
+  color: #fff;
+  letter-spacing: .03125em
 }
 .lyrics-summary:hover {
-  background-color: #0f0475
+  background-color: #2e2679
 }
 .lyrics-text {
   padding: 12px;
@@ -559,7 +563,7 @@ footer {
   transition: background-color .2s
 }
 .btn-reset {
-  background-color: #4b5563;
+  background-color: #546f96;
   width: 50px;
   font-size: 16px
 }
